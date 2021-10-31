@@ -76,5 +76,76 @@ We can go to Amazon Instance Store and create Instance from AMI in that
 AWS keep the root device volume
 
 ## ENI vs ENA vs EFA
+#### ENI
+Elastic Network Interface
+#### EN
+Enhanced Networking
+#### EFA - Elastic Fabric Adapter
 
+![img_7.png](img_7.png)
+
+## Encrypted Root Device, Volumes and Snapshots
+![img_8.png](img_8.png)
+
+To create Snapshots and AMI from an unencrypted Volume > create unencrypted Snapshot > copy
+snapshot with chosen encrypted > Create encrypted AMI from Copied Snapshot
+
+- Snapshot of encrypted volumes are encrypted automatically
+- Volumes restore from encrypted Snapshot are encrypted automatically
+- Can share snapshot when it is unencrypted
+
+## Spot Instances & Spot Fleets
+### Spot Instance good for:
+![img_9.png](img_9.png)
+### Spot Instance not good for:
+- Persitent Workload
+- Critical Jobs
+- Databases
+### Notice
+![img_10.png](img_10.png)
+
+## EC2 Hibernate
+Hibernate good for:
+- Long-running process
+- Service that take time to initialize
+
+Tip for Exam:
+- EC2 Hibernate preserves the in-memory RAM on persistent storage
+- Faster to boot up because not need reload the OS
+- Instance RAM must < 150GB
+- Instance families includes C3, C4, C5, M3, M4, M5, R3, R4, R5
+- Available for Windown, Amazon Linux 2AMI, Ubuntu
+- Can't hibernate over 60 days
+- Available for On-demand Instance and Reserved Instance
+
+## CloudWatch 101
+Diff of CloudWatch and CloudTrail
+- CloudWatch monitor performance
+- CloudTrail monitors API call in the AWS platform
+
+![img_11.png](img_11.png)
+
+**What can do with CloudWatch:**
+- Create Dashboard to monitor what happening with AWS environment
+- Alarms - Allow to set alarms to notify to system admin
+- Events - help to respone to stage change in AWS resource
+- Logs - help aggregate, monitor and store logs
+
+## AWS Command Line
+CLI to use with aws
+```
+$ aws s3 ls
+$ aws configure
+$ aws s3 ls
+$ aws s3 mb s3://longblogtestcreatefromlondon
+$ aws s3 ls
+```
+
+Tip for exam:
+- Can interact with AWS from anywhere in the world just using CLI
+- Will need setup access in IAM
+
+## Using IAM Roles With EC2
+- Role safely than storing access key and secret key in EC2 instance
+- Roles can assigned to en EC2 instance after it is created using both the console & command live
 
