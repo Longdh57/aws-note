@@ -149,3 +149,44 @@ Tip for exam:
 - Role safely than storing access key and secret key in EC2 instance
 - Roles can assigned to en EC2 instance after it is created using both the console & command live
 
+## Elastic File System
+Tip for exam
+- Support the Network File System version 4
+- Only pay for the storage you use
+- Can scale up to the petabytes
+- Can support thousands of concurrent NFS connections
+- Data is stored accross multiple AZ in same Region
+- Read After Write Consistency
+
+## FSX for Windows & FSX for Lustre
+When you should use an EFS, FSx for Windows or FSx for Lustre
+- **EFS**: when need distributed, highly resilient storage for Linux instance and Linux-based applications
+- **Amazon FSx for Windows**: When need centralised storage for Windows-based applications 
+such as Sharepoint, Microsoft SQL Server, Workspaces, IIS Web Server or any other native
+  Microsoft App
+- **Amazon FSx for Lustre**: when need high-speed, high capacity distributed storage. This will 
+be for app that do high Performance Compute, financial modelling. FSx for Listre can store
+  data directly on S3
+  
+## EC2 Placement Groups
+3 types of Placement Groups:
+- Clustered Placement Group
+  - Low network latency/high network throughput
+- Spread Placement Group
+  - Individual Critical EC2 instance
+- Partitioned
+  - Multiple EC2 instances HDFS, HBase, and Cassandra
+  
+![img_12.png](img_12.png)
+    
+## HPC On AWS
+![img_13.png](img_13.png)
+
+![img_14.png](img_14.png)
+
+![img_17.png](img_17.png)
+
+![img_16.png](img_16.png)
+
+## AWS WAF
+![img_18.png](img_18.png)
