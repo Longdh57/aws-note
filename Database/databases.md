@@ -1,7 +1,7 @@
 # Database 101
 
 ## Overview
-RDS (OLTP) includes 6 types:
+### RDS (OLTP) includes 6 types:
 - SQL
 - MySQL
 - Postgres
@@ -9,11 +9,13 @@ RDS (OLTP) includes 6 types:
 - Aurora
 - MariaDB
 
-DynamoDB (No SQL)
+### DynamoDB (No SQL)
 
-Red Shift OLAP is AWS data warehouse solution or Business Intelligence
+### **Red Shift OLAP** is AWS data warehouse solution or Business Intelligence
 
-Elasticache includes Memcached and Redis
+### Elasticache includes Memcached and Redis
+
+### IOPS = input/output operations per second
 
 ## Relational Databases
 - RDS runs on virtual machines
@@ -23,14 +25,14 @@ Elasticache includes Memcached and Redis
 - Aurora Serverless is Serverless
 
 ## RDS Backups, Multi-AZ & Read Replicas
-Read Replicas available for the following DB:
+**Read Replicas** available for the following DB:
 - Mysql server
 - Postgresql
 - MariaDB
 - Oracle
 - Aurora
 
-Things to know ab Read Replicas:
+Things to know ab **Read Replicas**:
 - Used for scaling, not for DR
 - Must have auto backup turn on in order to deploy a read replica
 - Have up to 5 read replica copies of any DB
@@ -84,3 +86,42 @@ share these snapshot with other AWS acc
 or unpredictable workloads
   
 ## Elasticache
+Includes **Memcached** and **Redis**
+Tip of the exam:
+- Elasticache increase database and web app performance
+- Memcached is limit of object type than Redis
+- Redis is multi-AZ
+- Can backup and restore of Redis
+
+## Database Migration Services (DMS)
+![img.png](img.png)
+DMS = Databases Migration Service  
+SCT = Schema Convertion Tool
+
+![img_1.png](img_1.png)
+
+## Caching Strategies on AWS
+![img_2.png](img_2.png)
+
+Caching is a balancing act between up-to-date, accurate information and latency. We can use
+the following services to cache on AWS:
+- CloudFront
+- API Gateway
+- ElasticCache - Memcached and Redis
+- DynamoDB Accelerator (DAX)
+
+## EMR Overview
+![img_4.png](img_4.png)
+
+> The central component of Amazon EMR is the cluster. A cluster is a collection of Amazon
+> Elastic Compute Cloud (Amazon EC2) instances. Each instance in the cluster is called a 
+> node. Each node has a role within the cluster, referred to as the node type
+
+![img_3.png](img_3.png)
+
+If master node is shutdown or terminated, we lose all log data. So we need config a cluster
+to archive the log files stored on the master node to Amazon S3. Amazon EMR archives the log
+files to Amazon S3 at five-minute intervals
+
+**EMR Tip of the Exam**
+![img_5.png](img_5.png)
