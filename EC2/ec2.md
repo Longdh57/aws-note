@@ -28,6 +28,7 @@ You can use connect CLI version web, it is provided by AWS
 
 Note:  
 - Default action for the root EBS volume to be deleted when instance terminated
+- If stop => start an instance, IP address will change
 
 ## Security Group - Basic
 - All inbound traffic is blocked by default
