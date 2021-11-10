@@ -46,3 +46,21 @@ to auto failover
 - No need disable Source/Destination Checks
 
 ## Network ACL
+![img_1.png](img_1.png)
+
+**Tip for exam**
+- VPC auto comes with default network ACL, and default allow all inbound + outbound traffic
+- Can create custom network ACLs. Default, each custom network denies all inbound and outbound unti
+add rules
+- Each subnet in VPC must be associated with a network ACL. If don't explicitly associate a subnet
+with a network ACL, the subnet is auto associated with default network ACL
+- Block IP addr using ACLs not Security Groups
+- Can associate a network ACL with multiple subnets. A subnet can be associated with only 1 network
+ACL at a time. When associated a network ACL with a subnet, previous association is removed
+- Network ACL contain a numbered list of rules that is evaluated in order, starting with the
+lowest numbered rule
+- NACL have separate inbound and outbound rules, and each rule can either allow or deny traffic
+- NACL are **stateless**; response to allowed inbound traffic are subject to the rules for outbound
+traffic
+  
+## 
