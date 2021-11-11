@@ -63,4 +63,52 @@ lowest numbered rule
 - NACL are **stateless**; response to allowed inbound traffic are subject to the rules for outbound
 traffic
   
-## 
+## Load Balancer
+
+## VPC flow logs
+Flow logs can create at 3 levels:
+- VPC
+- Subnet
+- Network Interface Level
+
+Remember
+- Can't enable flow logs for VPCs that are peered with your VPC unless the peer VPC is in your acc
+- Can tag flow logs
+- After create flow log, cannot change its config; for example, can't associate a diff IAM role with the
+flow log
+- Not all IP Traffic is monitor
+    - Traffic gen by instance when contact Amazon DNS server. If you use own DNS server, then all traffic to
+    that DNS server is logged
+    - Traffic gen by Windown instance for Amazon Windowns license
+    - Traffic to and from 169.254.169.254 for instance metadata
+    - DHCP traffic
+    - Traffic to reserved IP add for the default VPC router
+    
+## Bastions
+![img_2.png](img_2.png)
+
+## Direct Connect
+![img_3.png](img_3.png)
+
+Step to creating a Direct Connect Connection
+![img_4.png](img_4.png)
+
+## Global Accelerator
+Global Accelerator includes:
+- Static IP add
+- Accelerator
+- DNS name
+- Network Zone
+- Listener
+- Endpoint Group
+- Endpoint
+
+![img_5.png](img_5.png)
+
+## VPC End Points
+There are two types of VPC endpoints:
+- Interface Endpoint
+- Gateway Endpoint
+  - Currently Gw Endpoint support: Amazon S3 & DynamoDB
+
+
