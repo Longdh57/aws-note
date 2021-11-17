@@ -17,10 +17,11 @@ Subnet & Security Group
 Tip for exam:
 - When create a VPC, AWS also create a default Route Table, NACL and a default Security Group
 - When create a VPC, won't create any subnet, and not create default Internet Gateway
-- AZ for choosen is random for each account
+- AZ for chosen is random for each account
 - AWS always reserve 5 IP address in your subnet
-- Can have only 1 Gateway per VPC
+- Can have only 1 Internet Gateway per VPC
 - Security Group can't span VPCs
+- By default, **5 VPCs** am I allowed in each AWS region
 
 ## Network Address Translation (NAT)
 Tip:
@@ -64,6 +65,7 @@ lowest numbered rule
 traffic
   
 ## Load Balancer
+An application load balancer must be deployed into **at least two subnets**.
 
 ## VPC flow logs
 Flow logs can create at 3 levels:
@@ -85,6 +87,7 @@ flow log
     - Traffic to reserved IP add for the default VPC router
     
 ## Bastions
+![img_9.png](img_9.png)
 ![img_2.png](img_2.png)
 
 ## Direct Connect
@@ -93,7 +96,7 @@ flow log
 Step to creating a Direct Connect Connection
 ![img_4.png](img_4.png)
 
-## Global Accelerator
+## Global Accelerator SSA-CO2
 Global Accelerator includes:
 - Static IP add
 - Accelerator
@@ -105,10 +108,46 @@ Global Accelerator includes:
 
 ![img_5.png](img_5.png)
 
-## VPC End Points
+## VPC End Points SSA-CO2
+![img_10.png](img_10.png)
 There are two types of VPC endpoints:
 - Interface Endpoint
 - Gateway Endpoint
   - Currently Gw Endpoint support: Amazon S3 & DynamoDB
+
+## VPC Private Link SSA-CO2
+![img_6.png](img_6.png)
+Tip for exam:
+- if see a question ask about peering VPC to 10, 100 or 1000 of customer VPCS, think AWS Private Link
+- Not required VPC peering; no route table, NAT, IGW, ...
+- Required Network Load Balancer on service VPC and an ENI on the customer VPC
+
+## Transit Gateway SSA-CO2
+![img_7.png](img_7.png)
+
+ Tip for exam:
+- Allow have transitive peering between thousands of VPCs and on-premises data centers
+- Work on a hub-and-spoke model
+- Works on a regional basis, but can have it across multiple region
+- Can use it across multi AWS acc using Resource Access Manager RAM
+- Can use route tables to limit how VPCs task to one another
+- Work with Direct Connect as well as VPN connections
+- Support **IP multicast** (not support by any other AWS service)
+
+## VPN CloudHub
+![img_8.png](img_8.png)
+
+Tip for exam:
+- If have multiple sites, each with its own VPN connection, can use AWS VPN cloud hub to connect those sites together
+- Hub-and-spoke model
+- Low cost; easy to manage
+- It operates over the public internet but traffic from customer to the AWS VPN CloudHub is encrypted
+
+## Networking Costs on AWS SSA-CO2
+- Use private IP address over public IP add to save on costs. This them utilizes the AWS backbone network
+- If want to cut all network costs, group your EC2 instances in the same AZ and use private IP add. This will
+be cost-free, but make sure keep in mind single point of failure issues
+  
+
 
 
