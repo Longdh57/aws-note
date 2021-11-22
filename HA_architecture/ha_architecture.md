@@ -52,3 +52,30 @@ Tip for exam:
 
 ## HA Word Press Site
 
+## CloudFormation
+Tip for exam
+- Is a way of completely scripting your cloud env
+- Quick Start is a bunch of CloudFormation templates already built by AWS Solution Architects allowing you to create
+complex env very quickly
+  
+## Elastic Beanstalk
+![img_2.png](img_2.png)
+
+## Highly Available Bastions - SAA-C02
+We have 2 scenario for Bastion Host
+- Use Network Load Balancer
+- Use Auto Scaling Group
+
+Tip for exam:
+- 2 host in 2 separate AZ. Use a Network LB with static IP add and healthcheck to fail over one host to the other
+- Can't use an Application Load Balancer, as it is layer 7, and u need use layer 4
+- One host in one AZ behind an Auto Scaling Group with heath checks and a fixed EIP. It is cheapest option, but it
+not 100% fault tolerant
+  
+## On Premise Strategies - SAA-C02
+- Database Migration Service (DMS)
+- Server Migration Service (SMS)
+- AWS Application Discovery Service
+- VM Import/Export
+- Download Amazion Linux 2 as an ISO
+
